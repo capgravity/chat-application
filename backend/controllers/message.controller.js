@@ -1,5 +1,6 @@
 import Conversation from '../models/conversation.model.js'
 import Message from '../models/message.model.js'
+import { getReceiverSocketId, io } from '../socket/socket.js';
 
 export const sendMessage= async (req, res) =>{
     try{
@@ -29,12 +30,18 @@ export const sendMessage= async (req, res) =>{
             conversation.messages.push(newMessage._id);
         }
 
-        //SOCKET IO FUNCTIONALITY
 
         // await conversation.save();
-        // await newMessage.save()
+        // await newMessage.save() will give some time inputs between the two , better method is Promise.all
 
         await Promise.all([conversation.save(),newMessage.save()]);
+
+        const receiverSocketId= getReceiverSocketId(receiverId);
+        if(receiverSocketId){
+            io.to(receiverSocketId).emit("newMessage", newMessage)
+        }
+
+
         res.status(201).json(newMessage);
     }
     catch(error){
@@ -51,6 +58,11 @@ export const getMessages= async (req,res) =>{
         const conversation= await Conversation.findOne({
             participants: {$all:[senderId, userToChatId]}
         }).populate("messages");
+
+        if (!conversation) {
+            return res.status(200).json([]);
+        }
+
 
         res.status(200).json(conversation.messages);
 
