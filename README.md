@@ -1,6 +1,7 @@
 # Text Wave Application
 
 A chat application built with Node.js, Express, Socket.io for the backend, and Vite for the frontend.
+![TextWave](frontend/public/TextWave.png)
 
 ## Development Setup
 
