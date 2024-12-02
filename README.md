@@ -1,7 +1,7 @@
 <h1 align="center">Texting Application</h1>
 
 <p align="center">
-  <img src="frontend/public/TextWave.png" alt="TextWave" width="400" />
+  <img src="frontend/public/TextWave.png" alt="TextWave"  />
 </p>
 
 <br />
