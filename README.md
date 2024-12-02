@@ -1,7 +1,13 @@
-# Text Wave Application
+<h1 align="center">Texting Application</h1>
+
+<p align="center">
+  <img src="frontend/public/TextWave.png" alt="TextWave" width="400" />
+</p>
+
+<br />
 
 A chat application built with Node.js, Express, Socket.io for the backend, and Vite for the frontend.
-![TextWave](frontend/public/TextWave.png)
+
 
 ## Development Setup
 
