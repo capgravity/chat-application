@@ -69,6 +69,11 @@ Ensure that you have the following software installed on your system:
 
 6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the frontend.  
    The backend will be running on [http://localhost:5000](http://localhost:5000).
+   
+## Documentation
+
+For a detailed Project Structure, head to [Project Structure](docs/Project_Structure.md).
+
 
 ## License
  This project is licensed under the [MIT License](https://opensource.org/license/mit).
